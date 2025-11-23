@@ -48,7 +48,7 @@ const Privacy = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <Database className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Data stored in government-approved secure cloud infrastructure (Lovable Cloud)</span>
+                    <span>Data stored in government-approved secure cloud infrastructure (Google Firebase)</span>
                   </li>
                 </ul>
               </CardContent>
@@ -60,7 +60,7 @@ const Privacy = () => {
         <section className="py-16 px-4 bg-muted/50">
           <div className="container max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">What Information We Collect</h2>
-            
+
             <div className="space-y-6">
               <Card className="border-primary/20">
                 <CardContent className="pt-6">
@@ -106,7 +106,7 @@ const Privacy = () => {
         <section className="py-16 px-4">
           <div className="container max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">How We Protect Your Data</h2>
-            
+
             <div className="space-y-6">
               <Card className="border-primary/20">
                 <CardContent className="pt-6">
@@ -127,7 +127,7 @@ const Privacy = () => {
                     Secure Cloud Storage
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    All data is stored using Lovable Cloud, a government-approved secure infrastructure powered by Supabase. This includes:
+                    All data is stored using Secure Cloud infrastructure powered by Google Firebase. This includes:
                   </p>
                   <ul className="space-y-2 text-muted-foreground">
                     <li>• Database-level encryption at rest</li>
@@ -157,7 +157,7 @@ const Privacy = () => {
         <section className="py-16 px-4 bg-muted/50">
           <div className="container max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8">Who Can See Your Reports</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="border-accent/20">
                 <CardContent className="pt-6">

@@ -199,7 +199,7 @@ const About = () => {
                   <Shield className="h-12 w-12 text-secondary mx-auto mb-4" />
                   <h3 className="font-semibold mb-2">Secure Cloud Storage</h3>
                   <p className="text-sm text-muted-foreground">
-                    Stored in government-approved secure servers (Lovable Cloud powered)
+                    Stored in government-approved secure servers (Google Firebase powered)
                   </p>
                 </CardContent>
               </Card>
@@ -215,7 +215,7 @@ const About = () => {
               </Card>
             </div>
             <p className="text-center text-muted-foreground mt-8">
-              All credentials and reports are encrypted and stored securely using Lovable Cloud, ensuring complete confidentiality and immediate routing to appropriate authorities.
+              All credentials and reports are encrypted and stored securely using Google Firebase, ensuring complete confidentiality and immediate routing to appropriate authorities.
             </p>
           </div>
         </section>
