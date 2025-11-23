@@ -1,61 +1,28 @@
 # Deploying SafeSpeak to Render
 
+This project is configured for easy deployment on [Render](https://render.com).
+
 ## Prerequisites
-- GitHub account (to connect your repository)
-- Render account (free at [render.com](https://render.com))
-- Firebase project credentials
+1.  A GitHub account with this repository pushed to it.
+2.  A [Render](https://render.com) account.
 
-## Deployment Steps
+## Steps to Deploy
 
-### 1. Push Code to GitHub
-If you haven't already, push your code to a GitHub repository:
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin <your-github-repo-url>
-git push -u origin main
-```
+1.  **Log in to Render**: Go to [dashboard.render.com](https://dashboard.render.com).
+2.  **New Web Service**: Click the "New +" button and select **"Static Site"**.
+3.  **Connect GitHub**:
+    *   If you haven't already, connect your GitHub account.
+    *   Search for your repository (`safespeak_reporting_FINAL`) and click **"Connect"**.
+4.  **Configure**:
+    *   **Name**: Give your site a name (e.g., `safespeak-reporting`).
+    *   **Branch**: Select `main`.
+    *   **Build Command**: `npm install && npm run build` (should be auto-filled).
+    *   **Publish Directory**: `dist` (should be auto-filled).
+5.  **Environment Variables** (Optional but Recommended):
+    *   If you are using Firebase, you usually don't need to set server-side env vars for a static site, as the config is in your code. However, ensure your `src/lib/firebase.ts` has the correct config.
+6.  **Deploy**: Click **"Create Static Site"**.
 
-### 2. Set Up Environment Variables in Render
-Before deploying, you'll need to add your Firebase credentials as environment variables in Render:
+## Automatic Deploys
+Since we have a `render.yaml` file, Render might automatically detect the configuration. If it asks, you can confirm the settings.
 
-1. Go to [Render Dashboard](https://dashboard.render.com)
-2. Create a new Static Site
-3. Connect your GitHub repository
-4. Configure the following settings:
-   - **Build Command**: `npm install && npm run build`
-   - **Publish Directory**: `dist`
-   - **Branch**: `main` (or your default branch)
-
-5. Add environment variables in the "Environment" section:
-   - `VITE_FIREBASE_API_KEY`
-   - `VITE_FIREBASE_AUTH_DOMAIN`
-   - `VITE_FIREBASE_DATABASE_URL`
-   - `VITE_FIREBASE_PROJECT_ID`
-   - `VITE_FIREBASE_STORAGE_BUCKET`
-   - `VITE_FIREBASE_MESSAGING_SENDER_ID`
-   - `VITE_FIREBASE_APP_ID`
-
-### 3. Deploy
-Click "Create Static Site" and Render will automatically build and deploy your application.
-
-### 4. Custom Domain (Optional)
-You can add a custom domain in the Render dashboard under Settings > Custom Domain.
-
-## Automatic Deployments
-Render will automatically redeploy your site whenever you push changes to your connected GitHub repository.
-
-## Configuration Files
-- `render.yaml`: Contains the deployment configuration for Render
-- This file ensures proper routing for your React SPA
-
-## Troubleshooting
-- **Build fails**: Check that all dependencies are listed in `package.json`
-- **Blank page after deploy**: Verify environment variables are set correctly
-- **404 errors on refresh**: The `render.yaml` rewrite rule should handle this
-
-## Support
-- [Render Documentation](https://render.com/docs/static-sites)
-- [Render Community Forum](https://community.render.com)
+Every time you push code to the `main` branch, Render will automatically rebuild and deploy your site!
