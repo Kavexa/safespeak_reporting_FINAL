@@ -71,7 +71,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                help@safespeak.co
+                kavexa432@gmail.com
               </li>
             </ul>
           </div>

@@ -420,7 +420,7 @@ const Privacy = () => {
               If you have any questions or concerns about how your information is protected, please contact us:
             </p>
             <div className="space-y-2">
-              <p className="text-lg">📧 Email: privacy@safespeak.co</p>
+              <p className="text-lg">📧 Email: kavexa432@gmail.com</p>
               <p className="text-lg">📞 Privacy Helpline: 1800-XXX-XXXX</p>
             </div>
           </div>
