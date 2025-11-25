@@ -161,6 +161,68 @@ const About = () => {
           </div>
         </section>
 
+        {/* CCPRB Section */}
+        <section className="py-16 px-4 bg-muted/50">
+          <div className="container max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Shield className="h-16 w-16 text-primary mx-auto mb-4" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Meet the CCPRB</h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Central Child Protection Response Board
+              </p>
+            </div>
+
+            <Card className="border-primary/20 mb-8">
+              <CardContent className="pt-6">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  The CCPRB is a <strong className="text-primary">10-member, multi-agency command authority</strong> that takes immediate action when a child reports serious concerns like bullying, abuse, harassment, or teacher misconduct.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  This integrated team brings together Schools, Police, NGOs, Legal experts, Government child protection officers, Cyber specialists, and Medical professionals — all working under one unified command to protect every child.
+                </p>
+              </CardContent>
+            </Card>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <Card className="border-secondary/20">
+                <CardContent className="pt-6">
+                  <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-secondary" />
+                    Why CCPRB Matters
+                  </h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>✓ Unbiased investigation (schools can't investigate themselves)</li>
+                    <li>✓ Legal authority to take immediate action</li>
+                    <li>✓ Multi-agency coordination for complete protection</li>
+                    <li>✓ Full accountability with tracked outcomes</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-accent/20">
+                <CardContent className="pt-6">
+                  <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                    <Zap className="h-5 w-5 text-accent" />
+                    CCPRB Powers
+                  </h3>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>✓ Suspend accused individuals</li>
+                    <li>✓ Deploy police intervention</li>
+                    <li>✓ Order psychological counselling</li>
+                    <li>✓ Initiate legal proceedings</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="p-6 bg-primary/5 rounded-lg border border-primary/20 text-center">
+              <p className="text-muted-foreground italic text-lg">
+                "With CCPRB, SafeSpeak moves from being just a complaint box to a <strong className="text-primary">real-world deployable solution</strong> with legal validity, operational power, and multi-agency coordination."
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Innovation Edge */}
         <section className="py-16 px-4 bg-muted/50">
           <div className="container max-w-4xl mx-auto">

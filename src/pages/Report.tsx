@@ -277,7 +277,7 @@ const Report = () => {
       // Show different message for higher authority reports
       if (requiresHigherAuthority) {
         toast.success(`Report submitted to Higher Authorities! Your report ID is: ${reportId}`, {
-          description: 'This report has been sent directly to higher authorities (Childline, etc.) for immediate action.',
+          description: 'This report has been sent directly to the CCPRB (Central Child Protection Response Board) for immediate action.',
           duration: 7000,
         });
       } else {
@@ -385,8 +385,8 @@ const Report = () => {
                             <Card
                               key={cat.value}
                               className={`cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-primary/50 ${field.value === cat.value
-                                  ? 'border-primary bg-primary/5 shadow-md scale-[1.02]'
-                                  : 'border-border bg-card'
+                                ? 'border-primary bg-primary/5 shadow-md scale-[1.02]'
+                                : 'border-border bg-card'
                                 }`}
                               onClick={() => field.onChange(cat.value)}
                               style={{ animationDelay: `${index * 50}ms` }}
@@ -425,8 +425,8 @@ const Report = () => {
                           <Card
                             key={level.value}
                             className={`cursor-pointer transition-all duration-300 hover:shadow-lg hover:scale-105 ${field.value === level.value
-                                ? `${level.color} shadow-md border-2 scale-105`
-                                : 'border-border bg-card hover:border-primary/30'
+                              ? `${level.color} shadow-md border-2 scale-105`
+                              : 'border-border bg-card hover:border-primary/30'
                               }`}
                             onClick={() => field.onChange(level.value)}
                             style={{ animationDelay: `${index * 75}ms` }}
@@ -491,7 +491,7 @@ const Report = () => {
                                 Since a teacher or staff member is involved, we need your details to take official action.
                               </p>
                               <p className="font-semibold text-yellow-700 dark:text-yellow-300">
-                                🔒 This data is encrypted and sent ONLY to Higher Authorities (like Childline). The school will NOT see this report initially.
+                                🔒 This data is encrypted and sent ONLY to the CCPRB (Central Child Protection Response Board). The school will NOT see this report initially.
                               </p>
                             </div>
                           </div>
@@ -703,7 +703,7 @@ const Report = () => {
                   <div className="text-sm">
                     <p className="font-semibold mb-1 text-base">Emergency? Call Now</p>
                     <p className="text-muted-foreground">
-                      Childline: <strong>1098</strong> | Emergency: <strong>112</strong>
+                      CCPRB Helpline: <strong>1800-XXX-XXXX</strong> | Emergency: <strong>112</strong>
                     </p>
                   </div>
                 </div>

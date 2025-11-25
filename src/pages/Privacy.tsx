@@ -192,6 +192,161 @@ const Privacy = () => {
           </div>
         </section>
 
+        {/* CCPRB Section */}
+        <section className="py-16 px-4">
+          <div className="container max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8">What is the CCPRB?</h2>
+
+            <Card className="border-primary/20 mb-6">
+              <CardContent className="pt-6">
+                <h3 className="text-2xl font-semibold mb-4 text-primary">
+                  Central Child Protection Response Board
+                </h3>
+                <p className="text-muted-foreground mb-4">
+                  The CCPRB is a <strong>10-member, multi-agency command authority</strong> that takes over when a child reports bullying, abuse, harassment, or teacher misconduct through the SafeSpeak platform.
+                </p>
+                <p className="text-muted-foreground">
+                  It is the highest decision-making body that coordinates Schools, Police, NGOs, Legal experts, Government child protection officers, and Cyber and medical specialists — all under one unified command.
+                </p>
+              </CardContent>
+            </Card>
+
+            <div className="space-y-6">
+              <Card className="border-secondary/20">
+                <CardContent className="pt-6">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <Shield className="h-6 w-6 text-secondary" />
+                    Why CCPRB Exists
+                  </h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Schools cannot investigate themselves</li>
+                    <li>• Police cannot act without proper reports</li>
+                    <li>• NGOs cannot intervene without authority</li>
+                    <li>• Children cannot fight the system alone</li>
+                  </ul>
+                  <p className="mt-4 text-muted-foreground">
+                    The CCPRB fills the gap by becoming the single authority that evaluates every report, confirms severity, decides actions, deploys the right agency, tracks outcomes, and ensures accountability.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-accent/20">
+                <CardContent className="pt-6">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <UserCheck className="h-6 w-6 text-accent" />
+                    CCPRB Team Members (10 People)
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="flex items-start gap-2">
+                      <span className="text-primary">✓</span>
+                      <span className="text-sm text-muted-foreground">CWC Chairperson – Legal authority</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-primary">✓</span>
+                      <span className="text-sm text-muted-foreground">Pink Police Officer – Enforcement leader</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-primary">✓</span>
+                      <span className="text-sm text-muted-foreground">NGO Trauma Psychologist – Emotional assessment</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-primary">✓</span>
+                      <span className="text-sm text-muted-foreground">POCSO Legal Advisor – Legal compliance</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-primary">✓</span>
+                      <span className="text-sm text-muted-foreground">School Safeguarding Lead – School actions</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-primary">✓</span>
+                      <span className="text-sm text-muted-foreground">Digital Forensics Officer – Evidence verification</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-primary">✓</span>
+                      <span className="text-sm text-muted-foreground">District Child Protection Officer – Govt oversight</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-primary">✓</span>
+                      <span className="text-sm text-muted-foreground">Cybercell Officer – Online harassment</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-primary">✓</span>
+                      <span className="text-sm text-muted-foreground">Medical Examiner – Physical abuse confirmation</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-primary">✓</span>
+                      <span className="text-sm text-muted-foreground">Parent & Community Liaison – Home issues</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-primary/20">
+                <CardContent className="pt-6">
+                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                    <Database className="h-6 w-6 text-primary" />
+                    What CCPRB Does
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-primary/10 rounded-full p-2 flex-shrink-0">
+                        <span className="text-primary font-bold text-sm">1</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Reviews Severe Cases</h4>
+                        <p className="text-sm text-muted-foreground">All reports involving bullying, abuse, or teacher harassment are reviewed by the CCPRB first.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-primary/10 rounded-full p-2 flex-shrink-0">
+                        <span className="text-primary font-bold text-sm">2</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Confirms Danger Level</h4>
+                        <p className="text-sm text-muted-foreground">Psychologist + police + CWC check the risk level to determine appropriate action.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-primary/10 rounded-full p-2 flex-shrink-0">
+                        <span className="text-primary font-bold text-sm">3</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Verifies Digital Evidence</h4>
+                        <p className="text-sm text-muted-foreground">Images, audio, screenshots — all processed by forensic officers.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-primary/10 rounded-full p-2 flex-shrink-0">
+                        <span className="text-primary font-bold text-sm">4</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Decides Actions</h4>
+                        <p className="text-sm text-muted-foreground">Can suspend the accused, send police, order counselling, trigger medical checks, start legal procedures, inform child welfare committee, or contact parents (only when safe).</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-primary/10 rounded-full p-2 flex-shrink-0">
+                        <span className="text-primary font-bold text-sm">5</span>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Tracks to Closure</h4>
+                        <p className="text-sm text-muted-foreground">Every action is logged. No cover-ups. No manipulation. Complete accountability.</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="p-6 bg-primary/5 rounded-lg border border-primary/20">
+                <p className="font-semibold text-lg mb-2">In One Line:</p>
+                <p className="text-muted-foreground italic">
+                  "The Central Child Protection Response Board (CCPRB) is an integrated 10-member crisis authority that evaluates child reports, verifies evidence, and coordinates school, police, legal, psychological, and medical action to protect students."
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Data Retention */}
         <section className="py-16 px-4">
           <div className="container max-w-4xl mx-auto">

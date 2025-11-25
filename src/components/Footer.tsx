@@ -64,7 +64,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Emergency Contact</h3>
             <ul className="space-y-2 text-sm">
               <li className="text-muted-foreground">
-                <strong>Childline:</strong> 1098
+                <strong>CCPRB Helpline:</strong> 1800-XXX-XXXX
               </li>
               <li className="text-muted-foreground">
                 <strong>Emergency:</strong> 112
