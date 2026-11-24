@@ -1,287 +1,245 @@
-import { Shield, Lock, AlertCircle, CheckCircle, Zap, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import {
+  Eye,
+  Target,
+  Sparkles,
+  Shield,
+  Heart,
+  Lock,
+  UserCheck,
+  PhoneOff,
+  Smile,
+  RefreshCw,
+  Cpu,
+  ArrowRight,
+  CheckCircle2,
+} from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const About = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Navbar />
+
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 py-20 px-4">
+        {/* HERO */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-primary/15 via-secondary/10 to-accent/10 py-20 px-4 border-b border-border/40">
           <div className="container max-w-4xl mx-auto text-center relative z-10">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slideUp">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 mb-6">
+              <Sparkles className="h-4 w-4 text-primary" />
+              <span className="text-xs font-semibold tracking-wide uppercase text-primary">
+                Master Project Document
+              </span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
+              About{' '}
               <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                About SafeSpeak
+                SafeSpeak
               </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A government-backed initiative to give every child a safe, confidential channel to report concerns and receive immediate support.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              A child-centred safeguarding, wellness, and recovery ecosystem designed to bridge the gap between a child's fear of speaking up and the help they deserve.
             </p>
           </div>
-          <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-pulse delay-100" />
         </section>
 
-        {/* The Problem */}
-        <section className="py-16 px-4">
-          <div className="container max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <AlertCircle className="h-16 w-16 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">The Problem We're Solving</h2>
-            </div>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Every day, countless children carry invisible wounds — bullying, abuse, emotional stress, academic pressure, and fears about their own safety. Yet most stay silent. Fear of punishment, lack of trust, and social stigma lock their voices away.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Their pain lingers in the shadows, unspoken and unresolved, slowly eroding their physical health, emotional strength, and future dreams. Right now, no safe or child-friendly system exists for them to share these struggles.
-              </p>
-              <p className="text-lg text-primary font-semibold leading-relaxed">
-                Their cries vanish into silence, while problems grow darker. When a child's voice is silenced, we don't just lose a moment — we risk losing a life, a dream, and an entire future.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* How It Works */}
-        <section className="py-16 px-4 bg-muted/50">
+        {/* VISION & MISSION */}
+        <section className="py-20 px-4">
           <div className="container max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">How SafeSpeak Works</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <Card className="border-primary/20">
-                <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-2">1</div>
-                  <h3 className="font-semibold mb-2">Choose Your Mode</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Report anonymously or with your name — it's completely your choice.
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {/* Vision Card */}
+              <Card className="border-primary/30 shadow-card bg-card/80">
+                <CardContent className="p-8">
+                  <div className="h-12 w-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
+                    <Eye className="h-6 w-6" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary">Our Vision</span>
+                  <h2 className="text-2xl font-bold mt-1 mb-4">A World Where Every Child is Heard</h2>
+                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                    To build a world where every child feels safe enough to speak, every concern is taken seriously, and every child can access the support, protection, and care they deserve—regardless of their circumstances or background.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="border-secondary/20">
-                <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-secondary mb-2">2</div>
-                  <h3 className="font-semibold mb-2">Share Your Concern</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Tell us what's bothering you in a safe, judgment-free environment.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-accent/20">
-                <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-accent mb-2">3</div>
-                  <h3 className="font-semibold mb-2">Secure Transmission</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Your report is encrypted and sent directly to authorized professionals.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-primary/20">
-                <CardContent className="pt-6">
-                  <div className="text-4xl font-bold text-primary mb-2">4</div>
-                  <h3 className="font-semibold mb-2">Immediate Action</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Trained officers review and respond with care, ensuring your safety.
+              {/* Mission Card */}
+              <Card className="border-secondary/30 shadow-card bg-card/80">
+                <CardContent className="p-8">
+                  <div className="h-12 w-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center mb-6">
+                    <Target className="h-6 w-6" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-secondary">Our Mission</span>
+                  <h2 className="text-2xl font-bold mt-1 mb-4">Empowering Care Through Technology</h2>
+                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                    Our mission is to reduce the barriers children face when seeking help by combining accessible technology, empathetic communication, privacy-conscious reporting, and accountable safeguarding systems. We aim to make it easier for children to express concerns, easier for professionals to identify situations requiring attention, and more reliable for support systems to respond.
                   </p>
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </section>
 
-        {/* Why Different */}
-        <section className="py-16 px-4">
-          <div className="container max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why SafeSpeak is Different</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="border-primary/20">
-                <CardContent className="pt-6">
-                  <Globe className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="font-semibold mb-2">Multiple Access Points</h3>
-                  <p className="text-sm text-muted-foreground">
-                    School kiosks, mobile apps, and web portals ensure every child can reach us.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-secondary/20">
-                <CardContent className="pt-6">
-                  <Lock className="h-12 w-12 text-secondary mb-4" />
-                  <h3 className="font-semibold mb-2">End-to-End Encryption</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Your reports are encrypted using industry-standard 256-bit encryption.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-accent/20">
-                <CardContent className="pt-6">
-                  <CheckCircle className="h-12 w-12 text-accent mb-4" />
-                  <h3 className="font-semibold mb-2">Trained Authorities</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Reports reach verified child welfare officers, counselors, and law enforcement.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-primary/20">
-                <CardContent className="pt-6">
-                  <Zap className="h-12 w-12 text-primary mb-4" />
-                  <h3 className="font-semibold mb-2">Immediate Response</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Urgent cases trigger instant alerts to ensure rapid intervention.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-secondary/20">
-                <CardContent className="pt-6">
-                  <Shield className="h-12 w-12 text-secondary mb-4" />
-                  <h3 className="font-semibold mb-2">Anti-Bullying Shield</h3>
-                  <p className="text-sm text-muted-foreground">
-                    We handle reports without exposing the reporter, using generalized interventions.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-accent/20">
-                <CardContent className="pt-6">
-                  <CheckCircle className="h-12 w-12 text-accent mb-4" />
-                  <h3 className="font-semibold mb-2">Government Backed</h3>
-                  <p className="text-sm text-muted-foreground">
-                    An official initiative ensuring accountability and trustworthiness.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* CCPRB Section */}
-        <section className="py-16 px-4 bg-muted/50">
-          <div className="container max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <Shield className="h-16 w-16 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Meet the CCPRB</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Central Child Protection Response Board
-              </p>
-            </div>
-
-            <Card className="border-primary/20 mb-8">
-              <CardContent className="pt-6">
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  The CCPRB is a <strong className="text-primary">10-member, multi-agency command authority</strong> that takes immediate action when a child reports serious concerns like bullying, abuse, harassment, or teacher misconduct.
+            {/* WHY SAFESPEAK EXISTS */}
+            <div className="p-8 md:p-12 rounded-3xl bg-muted/30 border border-border/80 shadow-soft mb-20 space-y-6">
+              <span className="text-xs font-bold uppercase tracking-wider text-primary">The Foundational Gap</span>
+              <h2 className="text-3xl font-bold">Why SafeSpeak Exists</h2>
+              <div className="prose prose-lg text-muted-foreground space-y-4">
+                <p className="leading-relaxed">
+                  Many traditional safeguarding systems are activated only after a child has successfully disclosed a problem to an adult. However, fear, shame, uncertainty, power imbalances, and lack of trust prevent countless children from ever reaching that point.
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  This integrated team brings together Schools, Police, NGOs, Legal experts, Government child protection officers, Cyber specialists, and Medical professionals — all working under one unified command to protect every child.
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 text-left">
+                  <div className="p-6 rounded-2xl bg-card border border-border">
+                    <h3 className="font-bold text-foreground text-lg mb-2 flex items-center gap-2">
+                      <Shield className="h-5 w-5 text-primary" />
+                      The Gap Before Disclosure
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      SafeSpeak provides an accessible, non-judgemental, and low-pressure way to begin seeking support, exploring options, and understanding privacy before submitting any formal report.
+                    </p>
+                  </div>
+                  <div className="p-6 rounded-2xl bg-card border border-border">
+                    <h3 className="font-bold text-foreground text-lg mb-2 flex items-center gap-2">
+                      <RefreshCw className="h-5 w-5 text-secondary" />
+                      The Gap After Disclosure
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      SafeSpeak aims to provide structured prioritisation, qualified human intervention, independent escalation to avoid conflicts of interest, and continued follow-up.
+                    </p>
+                  </div>
+                </div>
+                <div className="p-4 rounded-xl bg-primary/10 border border-primary/20 text-primary font-semibold text-center mt-6">
+                  "Our approach recognises that reporting is not the outcome. Getting a child appropriate help is the outcome we work towards."
+                </div>
+              </div>
+            </div>
+
+            {/* CORE PRINCIPLES */}
+            <div className="mb-20">
+              <div className="text-center mb-12">
+                <span className="text-xs font-semibold tracking-wider text-primary uppercase">Guiding Values</span>
+                <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">Our Core Principles</h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Eight non-negotiable commitments that govern every line of code, interaction design, and operational procedure in SafeSpeak.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <Card className="border-secondary/20">
-                <CardContent className="pt-6">
-                  <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-secondary" />
-                    Why CCPRB Matters
-                  </h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>✓ Unbiased investigation (schools can't investigate themselves)</li>
-                    <li>✓ Legal authority to take immediate action</li>
-                    <li>✓ Multi-agency coordination for complete protection</li>
-                    <li>✓ Full accountability with tracked outcomes</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="border-accent/20">
-                <CardContent className="pt-6">
-                  <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                    <Zap className="h-5 w-5 text-accent" />
-                    CCPRB Powers
-                  </h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>✓ Suspend accused individuals</li>
-                    <li>✓ Deploy police intervention</li>
-                    <li>✓ Order psychological counselling</li>
-                    <li>✓ Initiate legal proceedings</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="p-6 bg-primary/5 rounded-lg border border-primary/20 text-center">
-              <p className="text-muted-foreground italic text-lg">
-                "With CCPRB, SafeSpeak moves from being just a complaint box to a <strong className="text-primary">real-world deployable solution</strong> with legal validity, operational power, and multi-agency coordination."
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Innovation Edge */}
-        <section className="py-16 px-4 bg-muted/50">
-          <div className="container max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Innovation Edge</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Unlike traditional complaint boxes or helplines, SafeSpeak is digitally integrated, proactive, and child-centered.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We disguise reporting within normal school activities (polls, quizzes, wellbeing tips), making it invisible, stigma-free, and safe. Our anti-bullying shield ensures that when a child reports, they are never exposed — instead, schools implement generalized interventions.
-              </p>
-              <p className="text-lg text-primary font-semibold leading-relaxed mt-4">
-                This blend of technology, psychology, and design creates a scalable system that builds trust, empowers voices, and saves lives.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Data Security */}
-        <section className="py-16 px-4">
-          <div className="container max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Your Data is Sacred</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="border-primary/20 text-center">
-                <CardContent className="pt-6">
-                  <Lock className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2">256-bit Encryption</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Bank-level security protects every report
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="p-6 rounded-2xl bg-card border border-border/80 shadow-soft">
+                  <Heart className="h-8 w-8 text-primary mb-4" />
+                  <h3 className="font-bold text-base mb-2">Child-First</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    The child’s physical safety, emotional dignity, and long-term wellbeing are prioritized in every decision.
                   </p>
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card className="border-secondary/20 text-center">
-                <CardContent className="pt-6">
-                  <Shield className="h-12 w-12 text-secondary mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2">Secure Cloud Storage</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Stored in government-approved secure servers (Google Firebase powered)
+                <div className="p-6 rounded-2xl bg-card border border-border/80 shadow-soft">
+                  <Shield className="h-8 w-8 text-secondary mb-4" />
+                  <h3 className="font-bold text-base mb-2">Trust Before Disclosure</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Children must clearly understand how their data is handled and their options before sharing sensitive experiences.
                   </p>
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card className="border-accent/20 text-center">
-                <CardContent className="pt-6">
-                  <CheckCircle className="h-12 w-12 text-accent mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2">Verified Access Only</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Only trained, authorized personnel can view reports
+                <div className="p-6 rounded-2xl bg-card border border-border/80 shadow-soft">
+                  <Lock className="h-8 w-8 text-accent mb-4" />
+                  <h3 className="font-bold text-base mb-2">Privacy by Design</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Collect only the information strictly necessary for a justified safeguarding purpose; avoid unnecessary surveillance.
                   </p>
-                </CardContent>
-              </Card>
+                </div>
+
+                <div className="p-6 rounded-2xl bg-card border border-border/80 shadow-soft">
+                  <UserCheck className="h-8 w-8 text-primary mb-4" />
+                  <h3 className="font-bold text-base mb-2">Human Accountability</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    AI assists in triage and listening; qualified human professionals remain solely responsible for safeguarding actions.
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-2xl bg-card border border-border/80 shadow-soft">
+                  <PhoneOff className="h-8 w-8 text-secondary mb-4" />
+                  <h3 className="font-bold text-base mb-2">Universal Accessibility</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Support should never depend on personal smartphone ownership, internet privilege, or formal written proficiency.
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-2xl bg-card border border-border/80 shadow-soft">
+                  <Smile className="h-8 w-8 text-accent mb-4" />
+                  <h3 className="font-bold text-base mb-2">No Judgement</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Children should never be blamed, shamed, or interrogated for seeking guidance or voicing distress.
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-2xl bg-card border border-border/80 shadow-soft">
+                  <RefreshCw className="h-8 w-8 text-primary mb-4" />
+                  <h3 className="font-bold text-base mb-2">Continuity of Care</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    A concern must never disappear into a digital void; response tracking and follow-up are actively sustained.
+                  </p>
+                </div>
+
+                <div className="p-6 rounded-2xl bg-card border border-border/80 shadow-soft">
+                  <Cpu className="h-8 w-8 text-secondary mb-4" />
+                  <h3 className="font-bold text-base mb-2">Responsible Tech</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Technological innovation must strictly respect legal frameworks like POCSO & JJ Act and never compromise safety.
+                  </p>
+                </div>
+              </div>
             </div>
-            <p className="text-center text-muted-foreground mt-8">
-              All credentials and reports are encrypted and stored securely using Google Firebase, ensuring complete confidentiality and immediate routing to appropriate authorities.
-            </p>
+
+            {/* MASTER BLUEPRINT SUMMARY CARD */}
+            <div className="p-8 md:p-12 rounded-3xl bg-gradient-to-br from-primary/10 via-card to-secondary/10 border border-primary/20 shadow-card">
+              <span className="text-xs font-bold uppercase tracking-wider text-primary">Master Summary</span>
+              <h2 className="text-2xl md:text-3xl font-bold mt-1 mb-6">SafeSpeak Master Profile</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                <div>
+                  <span className="font-semibold text-foreground block mb-1">Project Category:</span>
+                  <p className="text-muted-foreground">
+                    AI-assisted Child Safeguarding, Wellness, Prevention & Recovery Platform
+                  </p>
+                </div>
+
+                <div>
+                  <span className="font-semibold text-foreground block mb-1">Core Innovation:</span>
+                  <p className="text-muted-foreground">
+                    Addressing the barrier that exists before disclosure and connecting first contact to intervention and long-term recovery.
+                  </p>
+                </div>
+
+                <div>
+                  <span className="font-semibold text-foreground block mb-1">Target Stakeholders:</span>
+                  <p className="text-muted-foreground">
+                    Children, schools, safeguarding professionals, counsellors, healthcare services, and child-protection networks.
+                  </p>
+                </div>
+
+                <div>
+                  <span className="font-semibold text-foreground block mb-1">Long-term Vision:</span>
+                  <p className="text-muted-foreground">
+                    A scalable, universally accessible child safeguarding infrastructure ensuring no child is left unheard.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-border flex flex-wrap gap-4 items-center justify-between">
+                <div className="text-xs text-muted-foreground">
+                  Learn about the specific challenges SafeSpeak was designed to overcome:
+                </div>
+                <Link to="/problem">
+                  <Button className="gap-2">
+                    The Problem We Solve <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>
+
       <Footer />
     </div>
   );

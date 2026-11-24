@@ -1,434 +1,221 @@
-import { Shield, Lock, Eye, Database, UserCheck, FileText } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
+import {
+  Lock,
+  ShieldCheck,
+  KeyRound,
+  FileText,
+  EyeOff,
+  UserCheck,
+  Scale,
+  AlertTriangle,
+  ArrowRight,
+  CheckCircle2,
+  Database,
+  FileCheck2,
+} from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const Privacy = () => {
+const PrivacyPage = () => {
+  const privacyPrinciples = [
+    {
+      title: 'Data Minimisation',
+      desc: 'Collect only information necessary for the stated safeguarding purpose. Avoid unnecessary identity, location, biometric, or device-tracking data.',
+    },
+    {
+      title: 'Strict Confidentiality',
+      desc: 'Restrict sensitive information strictly to authorised personnel with a verified safeguarding role under role-based access control (RBAC).',
+    },
+    {
+      title: 'Pseudonymous Access',
+      desc: 'Allow children to communicate via randomly generated case codes instead of forcing phone numbers, email, or institutional logins.',
+    },
+    {
+      title: 'Total Transparency',
+      desc: 'Clearly explain what data is collected, why it is collected, who has access, and when legal mandates require escalation.',
+    },
+    {
+      title: 'Defense-in-Depth Security',
+      desc: 'End-to-end data encryption, session sanitization, encrypted cloud databases, and tamper-resistant audit logs.',
+    },
+    {
+      title: 'Strict Purpose Limitation',
+      desc: 'Information collected for child safeguarding must never be repurposed for marketing, behavioural advertising, or academic profiling.',
+    },
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Navbar />
+
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 py-20 px-4">
+        {/* HERO */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-primary/15 via-secondary/10 to-accent/15 py-20 px-4 border-b border-border/40">
           <div className="container max-w-4xl mx-auto text-center relative z-10">
-            <Shield className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-slideUp">
-              <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                Privacy & Security Policy
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 mb-6">
+              <Lock className="h-4 w-4 text-primary" />
+              <span className="text-xs font-semibold tracking-wide uppercase text-primary">
+                Trust & Legal Safeguards
               </span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
+              Privacy, Anonymity & Digital Trust
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
-              Your safety and privacy are our highest priorities. Here's exactly how we protect you.
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Last Updated: January 2025
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              Trust must be built into the system. Children should never have to guess whether SafeSpeak is private, who can read their disclosures, or what happens after they reach out.
             </p>
           </div>
         </section>
 
-        {/* Quick Summary */}
-        <section className="py-16 px-4">
-          <div className="container max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8">Quick Summary</h2>
-            <Card className="border-primary/20">
-              <CardContent className="pt-6">
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <Lock className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>All reports are encrypted using 256-bit encryption before storage</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Shield className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <span>Anonymous reports contain zero personally identifiable information</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <UserCheck className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span>Only verified, trained child welfare officers can access reports</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Database className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span>Data stored in government-approved secure cloud infrastructure (Google Firebase)</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* What We Collect */}
-        <section className="py-16 px-4 bg-muted/50">
-          <div className="container max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">What Information We Collect</h2>
-
-            <div className="space-y-6">
-              <Card className="border-primary/20">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <Shield className="h-6 w-6 text-primary" />
-                    For Anonymous Reports:
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• Report category (e.g., bullying, abuse)</li>
-                    <li>• Detailed description of the concern</li>
-                    <li>• Optionally: age range, general location (school/city)</li>
-                    <li>• Timestamp of submission</li>
-                  </ul>
-                  <div className="mt-4 p-3 bg-primary/10 rounded-lg">
-                    <p className="font-semibold text-primary">
-                      We do NOT collect: Name, email, phone number, or any identifiable data.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-secondary/20">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <UserCheck className="h-6 w-6 text-secondary" />
-                    For Named Reports:
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• All of the above</li>
-                    <li>• Optional: Your name</li>
-                    <li>• Optional: Contact information (only if you want follow-up)</li>
-                  </ul>
-                  <p className="mt-4 text-sm text-muted-foreground italic">
-                    This information is only used to provide you with support and updates on your case.
-                  </p>
-                </CardContent>
-              </Card>
+        {/* SECTION: PRIVACY PRINCIPLES */}
+        <section className="py-20 px-4">
+          <div className="container max-w-5xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="text-xs font-semibold tracking-wider text-primary uppercase">Core Commitments</span>
+              <h2 className="text-3xl font-bold mt-2 mb-4">Our Six Privacy Principles</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Engineered to establish safe, verifiable boundaries before a child shares a single word.
+              </p>
             </div>
-          </div>
-        </section>
 
-        {/* How We Protect */}
-        <section className="py-16 px-4">
-          <div className="container max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">How We Protect Your Data</h2>
-
-            <div className="space-y-6">
-              <Card className="border-primary/20">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <Lock className="h-6 w-6 text-primary" />
-                    End-to-End Encryption
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Every report is encrypted using industry-standard 256-bit AES encryption before it leaves your device. This means even if someone intercepts the data, they cannot read it.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-secondary/20">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <Database className="h-6 w-6 text-secondary" />
-                    Secure Cloud Storage
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    All data is stored using Secure Cloud infrastructure powered by Google Firebase. This includes:
-                  </p>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• Database-level encryption at rest</li>
-                    <li>• Automatic backups with encryption</li>
-                    <li>• Firewall protection and intrusion detection</li>
-                    <li>• Regular security audits and compliance checks</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card className="border-accent/20">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <UserCheck className="h-6 w-6 text-accent" />
-                    Access Control
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Only verified child welfare officers, counselors, and authorized government personnel can access reports. Each access is logged and audited for accountability.
-                  </p>
-                </CardContent>
-              </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+              {privacyPrinciples.map((item, idx) => (
+                <Card key={idx} className="border-border/80 shadow-soft hover:border-primary/50 transition-all">
+                  <CardContent className="pt-6">
+                    <ShieldCheck className="h-8 w-8 text-primary mb-3" />
+                    <h3 className="font-bold text-base mb-2">{item.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
-          </div>
-        </section>
 
-        {/* Who Can See */}
-        <section className="py-16 px-4 bg-muted/50">
-          <div className="container max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">Who Can See Your Reports</h2>
+            {/* ANONYMOUS VS CONFIDENTIAL COMPARISON */}
+            <div className="p-8 md:p-12 rounded-3xl bg-card border border-border shadow-card mb-20">
+              <div className="text-center mb-8">
+                <span className="text-xs font-bold uppercase tracking-wider text-primary">Clarity Over Illusion</span>
+                <h3 className="text-2xl md:text-3xl font-bold mt-1">Anonymous vs. Confidential Reporting</h3>
+                <p className="text-sm text-muted-foreground max-w-xl mx-auto mt-2">
+                  SafeSpeak never presents anonymity as a false guarantee if technology or legal duties could reveal identity.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="border-accent/20">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-accent">
-                    <Eye className="h-6 w-6" />
-                    Authorized Personnel Only:
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>✓ Trained child welfare officers</li>
-                    <li>✓ School counselors (only for school-related reports)</li>
-                    <li>✓ Law enforcement (only in cases involving crimes or immediate danger)</li>
-                    <li>✓ Government child protection authorities</li>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-6 rounded-2xl bg-muted/40 border border-border space-y-3">
+                  <div className="flex items-center gap-2 text-primary font-bold text-base">
+                    <EyeOff className="h-5 w-5" />
+                    <span>Anonymous Reporting</span>
+                  </div>
+                  <ul className="space-y-2 text-xs text-muted-foreground leading-relaxed">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                      <span>Identity is not collected and is unknown to the software.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                      <span>Great for low-pressure first contact and broad school issues.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />
+                      <span>Limits direct physical outreach if the child is in immediate danger.</span>
+                    </li>
                   </ul>
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card className="border-destructive/20">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2 text-destructive">
-                    <Shield className="h-6 w-6" />
-                    Who CANNOT See Your Reports:
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>✗ Other students</li>
-                    <li>✗ Teachers (unless authorized by the system)</li>
-                    <li>✗ Parents (unless you explicitly request it)</li>
-                    <li>✗ The accused person (to protect you from retaliation)</li>
+                <div className="p-6 rounded-2xl bg-muted/40 border border-border space-y-3">
+                  <div className="flex items-center gap-2 text-secondary font-bold text-base">
+                    <UserCheck className="h-5 w-5" />
+                    <span>Confidential Reporting</span>
+                  </div>
+                  <ul className="space-y-2 text-xs text-muted-foreground leading-relaxed">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-secondary shrink-0 mt-0.5" />
+                      <span>Identity is known only to authorized, vetted safeguarding professionals.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-secondary shrink-0 mt-0.5" />
+                      <span>Allows ongoing protective interventions, counselling, and recovery support.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-secondary shrink-0 mt-0.5" />
+                      <span>Protected by strict institutional firewalls and legal safeguarding duties.</span>
+                    </li>
                   </ul>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
 
-        {/* CCPRB Section */}
-        <section className="py-16 px-4">
-          <div className="container max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">What is the CCPRB?</h2>
+            {/* THE CASE-CODE MECHANISM */}
+            <div className="p-8 md:p-12 rounded-3xl bg-muted/30 border border-border shadow-soft mb-20 space-y-6">
+              <div className="flex items-center gap-3">
+                <KeyRound className="h-8 w-8 text-primary" />
+                <h3 className="text-2xl font-bold">The Case-Code Mechanism</h3>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                SafeSpeak solves the communication paradox without requiring accounts, passwords, or emails. Upon submission or first chat, the system generates a random, cryptographically secure 6-digit Case Code (e.g. <code className="bg-primary/10 text-primary px-2 py-0.5 rounded font-mono">SPK-7842</code>).
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 text-xs">
+                <div className="p-4 rounded-xl bg-card border border-border">
+                  <div className="font-bold text-foreground mb-1">1. Zero Registration</div>
+                  <p className="text-muted-foreground">No names, student admission numbers, or phone numbers are required to track status.</p>
+                </div>
+                <div className="p-4 rounded-xl bg-card border border-border">
+                  <div className="font-bold text-foreground mb-1">2. Two-Way Asynchronous Chat</div>
+                  <p className="text-muted-foreground">Entering the code allows the child to read messages from the safeguarding officer safely.</p>
+                </div>
+                <div className="p-4 rounded-xl bg-card border border-border">
+                  <div className="font-bold text-foreground mb-1">3. Cross-Device Freedom</div>
+                  <p className="text-muted-foreground">A child can initiate on a school kiosk and check updates later from home or vice versa.</p>
+                </div>
+              </div>
+            </div>
 
-            <Card className="border-primary/20 mb-6">
-              <CardContent className="pt-6">
-                <h3 className="text-2xl font-semibold mb-4 text-primary">
-                  Central Child Protection Response Board
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  The CCPRB is a <strong>10-member, multi-agency command authority</strong> that takes over when a child reports bullying, abuse, harassment, or teacher misconduct through the SafeSpeak platform.
-                </p>
-                <p className="text-muted-foreground">
-                  It is the highest decision-making body that coordinates Schools, Police, NGOs, Legal experts, Government child protection officers, and Cyber and medical specialists — all under one unified command.
-                </p>
-              </CardContent>
-            </Card>
+            {/* LEGAL & STATUTORY FRAMEWORKS (INDIA) */}
+            <div className="p-8 md:p-12 rounded-3xl bg-card border border-border shadow-card mb-16 space-y-6">
+              <div className="flex items-center gap-3">
+                <Scale className="h-8 w-8 text-primary" />
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-wider text-primary">Indian Jurisdictional Compliance</span>
+                  <h3 className="text-2xl font-bold">Child Protection & Legal Safeguards</h3>
+                </div>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-sm">
+                SafeSpeak is designed to operate within applicable Indian child-protection statutes and professional standards. The platform supports existing statutory duties rather than attempting to supersede them.
+              </p>
 
-            <div className="space-y-6">
-              <Card className="border-secondary/20">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <Shield className="h-6 w-6 text-secondary" />
-                    Why CCPRB Exists
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• Schools cannot investigate themselves</li>
-                    <li>• Police cannot act without proper reports</li>
-                    <li>• NGOs cannot intervene without authority</li>
-                    <li>• Children cannot fight the system alone</li>
-                  </ul>
-                  <p className="mt-4 text-muted-foreground">
-                    The CCPRB fills the gap by becoming the single authority that evaluates every report, confirms severity, decides actions, deploys the right agency, tracks outcomes, and ensures accountability.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-muted-foreground">
+                <div className="p-4 rounded-xl bg-muted/40 border border-border">
+                  <span className="font-bold text-foreground block mb-1">POCSO Act, 2012:</span>
+                  Protection of Children from Sexual Offences. SafeSpeak complies with mandatory reporting obligations for offenses under POCSO, facilitating immediate routing to Special Juvenile Police Units (SJPU) and Child Welfare Committees.
+                </div>
+                <div className="p-4 rounded-xl bg-muted/40 border border-border">
+                  <span className="font-bold text-foreground block mb-1">Juvenile Justice (JJ) Act:</span>
+                  Framework for the care, protection, and rehabilitation of children in need of care and protection, honoring Child Welfare Committee (CWC) jurisdiction.
+                </div>
+                <div className="p-4 rounded-xl bg-muted/40 border border-border">
+                  <span className="font-bold text-foreground block mb-1">Digital Personal Data Protection (DPDP) Act:</span>
+                  Compliant data handling standards concerning verifiable parental consent pathways for general apps while respecting protective exemptions for child welfare emergencies.
+                </div>
+                <div className="p-4 rounded-xl bg-muted/40 border border-border">
+                  <span className="font-bold text-foreground block mb-1">UNCRC & Child Rights Frameworks:</span>
+                  Centered on the best interests of the child, non-discrimination, right to be heard, and physical and emotional integrity.
+                </div>
+              </div>
 
-              <Card className="border-accent/20">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <UserCheck className="h-6 w-6 text-accent" />
-                    CCPRB Team Members (10 People)
-                  </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    <div className="flex items-start gap-2">
-                      <span className="text-primary">✓</span>
-                      <span className="text-sm text-muted-foreground">CWC Chairperson – Legal authority</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-primary">✓</span>
-                      <span className="text-sm text-muted-foreground">Pink Police Officer – Enforcement leader</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-primary">✓</span>
-                      <span className="text-sm text-muted-foreground">NGO Trauma Psychologist – Emotional assessment</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-primary">✓</span>
-                      <span className="text-sm text-muted-foreground">POCSO Legal Advisor – Legal compliance</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-primary">✓</span>
-                      <span className="text-sm text-muted-foreground">School Safeguarding Lead – School actions</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-primary">✓</span>
-                      <span className="text-sm text-muted-foreground">Digital Forensics Officer – Evidence verification</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-primary">✓</span>
-                      <span className="text-sm text-muted-foreground">District Child Protection Officer – Govt oversight</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-primary">✓</span>
-                      <span className="text-sm text-muted-foreground">Cybercell Officer – Online harassment</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-primary">✓</span>
-                      <span className="text-sm text-muted-foreground">Medical Examiner – Physical abuse confirmation</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-primary">✓</span>
-                      <span className="text-sm text-muted-foreground">Parent & Community Liaison – Home issues</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-primary/20">
-                <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                    <Database className="h-6 w-6 text-primary" />
-                    What CCPRB Does
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <div className="bg-primary/10 rounded-full p-2 flex-shrink-0">
-                        <span className="text-primary font-bold text-sm">1</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-1">Reviews Severe Cases</h4>
-                        <p className="text-sm text-muted-foreground">All reports involving bullying, abuse, or teacher harassment are reviewed by the CCPRB first.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="bg-primary/10 rounded-full p-2 flex-shrink-0">
-                        <span className="text-primary font-bold text-sm">2</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-1">Confirms Danger Level</h4>
-                        <p className="text-sm text-muted-foreground">Psychologist + police + CWC check the risk level to determine appropriate action.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="bg-primary/10 rounded-full p-2 flex-shrink-0">
-                        <span className="text-primary font-bold text-sm">3</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-1">Verifies Digital Evidence</h4>
-                        <p className="text-sm text-muted-foreground">Images, audio, screenshots — all processed by forensic officers.</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="bg-primary/10 rounded-full p-2 flex-shrink-0">
-                        <span className="text-primary font-bold text-sm">4</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-1">Decides Actions</h4>
-                        <p className="text-sm text-muted-foreground">Can suspend the accused, send police, order counselling, trigger medical checks, start legal procedures, inform child welfare committee, or contact parents (only when safe).</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="bg-primary/10 rounded-full p-2 flex-shrink-0">
-                        <span className="text-primary font-bold text-sm">5</span>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-1">Tracks to Closure</h4>
-                        <p className="text-sm text-muted-foreground">Every action is logged. No cover-ups. No manipulation. Complete accountability.</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <div className="p-6 bg-primary/5 rounded-lg border border-primary/20">
-                <p className="font-semibold text-lg mb-2">In One Line:</p>
-                <p className="text-muted-foreground italic">
-                  "The Central Child Protection Response Board (CCPRB) is an integrated 10-member crisis authority that evaluates child reports, verifies evidence, and coordinates school, police, legal, psychological, and medical action to protect students."
-                </p>
+              {/* Ethical Commitments */}
+              <div className="p-4 rounded-2xl bg-primary/5 border border-primary/20 text-xs text-foreground space-y-1">
+                <strong>Our Legal & Ethical Commitments:</strong> Never promise absolute secrecy in severe danger • Transparently explain privacy limits • Never use child data for ads • Involve vetted human experts for every legal escalation.
               </div>
             </div>
           </div>
         </section>
-
-        {/* Data Retention */}
-        <section className="py-16 px-4">
-          <div className="container max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">Data Retention & Deletion</h2>
-            <Card className="border-primary/20">
-              <CardContent className="pt-6">
-                <p className="text-muted-foreground mb-4">
-                  Reports are kept securely for as long as needed to:
-                </p>
-                <ul className="space-y-2 text-muted-foreground mb-4">
-                  <li>• Resolve your concern and ensure your safety</li>
-                  <li>• Comply with legal requirements</li>
-                  <li>• Prevent future incidents (anonymized data for trend analysis)</li>
-                </ul>
-                <Separator className="my-4" />
-                <p className="text-muted-foreground">
-                  Once a case is closed and no longer needed, personal information is deleted. Only anonymized, aggregated data may be kept for research and improvement purposes.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Your Rights */}
-        <section className="py-16 px-4 bg-muted/50">
-          <div className="container max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8">Your Rights</h2>
-            <Card className="border-primary/20">
-              <CardContent className="pt-6">
-                <p className="text-muted-foreground mb-4">You have the right to:</p>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <FileText className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Access</h4>
-                      <p className="text-sm text-muted-foreground">Request a copy of your submitted report (if named)</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <FileText className="h-5 w-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Update</h4>
-                      <p className="text-sm text-muted-foreground">Correct any inaccurate information</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <FileText className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Withdraw</h4>
-                      <p className="text-sm text-muted-foreground">Request deletion of your data (unless legally required to keep)</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Shield className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h4 className="font-semibold mb-1">Anonymous Forever</h4>
-                      <p className="text-sm text-muted-foreground">If you report anonymously, we cannot trace it back to you</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-
-        {/* Contact */}
-        <section className="py-16 px-4">
-          <div className="container max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Questions About Privacy?</h2>
-            <p className="text-muted-foreground mb-6">
-              If you have any questions or concerns about how your information is protected, please contact us:
-            </p>
-            <div className="space-y-2">
-              <p className="text-lg">📧 Email: kavexa432@gmail.com</p>
-              <p className="text-lg">📞 Privacy Helpline: 1800-XXX-XXXX</p>
-            </div>
-          </div>
-        </section>
       </main>
+
       <Footer />
     </div>
   );
 };
 
-export default Privacy;
+export default PrivacyPage;
